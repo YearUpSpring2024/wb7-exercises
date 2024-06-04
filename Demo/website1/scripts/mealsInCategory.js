@@ -16,15 +16,18 @@ function onGetResultsButton() {
 
     let actualurl = apiBaseUrl + categoryInput.value;
 
-    fetch(actualurl).then(response => response.json()).then(data => {
-        console.log(data);
+    fetch(actualurl)
+        .then(response =>
+            response.json())
+        .then(data => {
+            console.log(data);
 
-        for (let meal of data.meals) {
-            let p = document.createElement("p");
-            p.innerHTML = meal.strMeal;
+            for (let meal of data.meals) {
+                let p = document.createElement("p");
+                p.innerHTML = meal.strMeal;
 
-            resultsOutput.appendChild(p);
-        }
-    })
+                resultsOutput.appendChild(p);
+            }
+        })
 
 }
